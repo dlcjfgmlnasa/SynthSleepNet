@@ -10,12 +10,12 @@ Sleep is an essential factor for maintaining human health and quality of life. T
 ## License and Citation 📰
 The software is licensed under the Apache License 2.0. Please cite the following paper if you have used this code:
 
-- About `SynthSleepNet`
+- *SynthSleepNet*
 ```
 
 ```
 
-- About `NeuroNet`
+- *NeuroNet*
 ```
 @article{lee2024neuronet,
   title={NeuroNet: A Novel Hybrid Self-Supervised Learning Framework for Sleep Stage Classification Using Single-Channel EEG},
