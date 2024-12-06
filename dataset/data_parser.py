@@ -19,15 +19,14 @@ mne.set_log_level(False)
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--src_path',
-                        default=os.path.join('..', '..', '..', '..', 'Dataset',
-                                             'SHHS', 'polysomnography', 'edfs', 'shhs1'),
+                        default=os.path.join('..', '..', '..', '..', 'Dataset', 'SHHS', 'polysomnography', 'edfs', 'shhs1'),
+                        help='Sleep Heart Health Study (SHHS) EDF file path',
                         type=str)
-    parser.add_argument('--trg_path',
-                        default=os.path.join('..', 'data', 'shhs1'),
+    parser.add_argument('--trg_path', default=os.path.join('..', 'data', 'shhs1'),
+                        help='Save Path',
                         type=str)
-    parser.add_argument('--type',
-                        default='shhs1',
-                        choices=['shhs1', 'shhs2'],
+    parser.add_argument('--type', default='shhs1', choices=['shhs1', 'shhs2'],
+                        help='Cohort Type',
                         type=str)
     return parser.parse_args()
 
@@ -218,9 +217,9 @@ if __name__ == '__main__':
         # Sleep Heart Health Study 1 Version
         # https://sleepdata.org/datasets/shhs
         src_base_path_ = augment.src_path
-        trg_base_path_ = augment.trc_path
+        trg_base_path_ = augment.trg_path
         dataset = SHHS()
-        for name__ in tqdm.tqdm(selected_edf_files):
+        for name__ in tqdm.tqdm(os.listdir(src_base_path_)):
             try:
                 src_path_ = os.path.join(src_base_path_, name__)
                 trg_path_ = os.path.join(trg_base_path_, name__.split('.')[0])
@@ -232,7 +231,7 @@ if __name__ == '__main__':
         # Sleep Heart Health Study 2 Version
         # https://sleepdata.org/datasets/shhs
         src_base_path_ = augment.src_path
-        trg_base_path_ = augment.trc_path
+        trg_base_path_ = augment.trg_path
         dataset = SHHS()
         for name__ in tqdm.tqdm(os.listdir(src_base_path_)):
             try:
