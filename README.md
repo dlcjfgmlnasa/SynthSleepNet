@@ -33,7 +33,7 @@ The pretrained *SynthSleepNet* can be used to perform downstream tasks.
     
 2. Fine-Tuning
 
-    To perform fine-tuning, use `downstream/linear_probing/train.py`
+    To perform fine-tuning, use `downstream/fine_tuning/train.py`
     
 
 ## License and Citation 📰
