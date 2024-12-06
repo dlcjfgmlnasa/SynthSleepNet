@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
-import sys
-sys.path.extend(['/home/brainlab/Workspace/Chlee/MultiModal_for_Sleep'])
 import os
+import sys
+sys.path.append(os.path.abspath('.'))
+
 import mne
 import shutil
 import torch
