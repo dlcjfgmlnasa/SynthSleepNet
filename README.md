@@ -9,7 +9,20 @@ Sleep is an essential factor for maintaining human health and quality of life. T
 
 ![synthsleepnet structure](https://github.com/dlcjfgmlnasa/SynthSleepNet/blob/main/figures/architecture.png)
 
-## Usage
+## Installation 💿
+The code requires `python>=3.9`, as well as `pytorch>=2.0.1` and `torchvision>=0.15`. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
+
+Clone the repository locally and install with *SynthSleepNet*
+
+```bash
+>> git clone https://github.com/dlcjfgmlnasa/SynthSleepNet.git
+>> cd SynthSleepNet
+>> pip install -r requirements.txt
+```
+
+
+## Usage 🤖
+
 ### 1. Downloading Dataset
 The Sleep Heart Health Study (SHHS) EDF (European Data Format) files are available for download from the [National Sleep Research Resource (NSRR)](https://sleepdata.org/datasets/shhs). NSRR provides access to a variety of sleep study datasets, including SHHS.
 
@@ -18,26 +31,25 @@ To convert EDF files into Parquet format using the `dataset/data_parser.py` pyth
 
 ### 3. Training
 
-#### [Step 1] Pretrained NeuroNet
-Each physiological signal (i.e., `EEG` 🧠, `EOG` 👀, `ECG` 💓, `EMG` 💪) was pretrained using *NeuroNet*. *NeuroNet* is a self-supervised learning framework designed for training on single-modality physiological signals. To train each modality, use `pretrained/unimodal/{modality_name}/train.py`.
+#### [Step 1] Training NeuroNet
+Each physiological signal (i.e., `EEG` 🧠, `EOG` 👀, `ECG` 💓, `EMG` 💪) was pretrained using *NeuroNet*. *NeuroNet* is a self-supervised learning framework designed for training on single-modality physiological signals. 
 
-#### [Step 2] Pretrained SynthSleepNet
-*SynthSleepNet* is a multimodal hybrid self-supervised learning framework designed to effectively synthesize information from different physiological signal modalities. To train *SynthSleepNet*, use `pretrained/multimodal/train.py`.
+To train *NeuroNet* using each modality, use `pretrained/unimodal/{modality_name}/train.py`.
+
+#### [Step 2] Training SynthSleepNet
+*SynthSleepNet* is a multimodal hybrid self-supervised learning framework designed to effectively synthesize information from different physiological signal modalities. 
+
+To train *SynthSleepNet*, use `pretrained/multimodal/train.py`.
 
 #### [Step 3] Downstream Task
 The pretrained *SynthSleepNet* can be used to perform downstream tasks.
 
-1. Linear Probing
-
-    To perform linear probing, use `downstream/linear_probing/train.py`
+1. **Linear Probing** : To perform linear probing, use `downstream/linear_probing/train.py`
     
-2. Fine-Tuning
-
-    To perform fine-tuning, use `downstream/fine_tuning/train.py`
-    
+2. **Fine-Tuning** : To perform fine-tuning, use `downstream/fine_tuning/train.py`
 
 ## License and Citation 📰
-The software is licensed under the Apache License 2.0. Please cite the following paper if you have used this code:
+The software is licensed under the Apache License 2.0. Please cite the following paper if you have used this code
 
 - *SynthSleepNet*
 ```
