@@ -53,14 +53,11 @@ The software is licensed under the Apache License 2.0. Please cite the following
 
 - *SynthSleepNet*
 ```
-@misc{lee2025foundationalmodelsleepanalysis,
-      title={Toward Foundational Model for Sleep Analysis Using a Multimodal Hybrid Self-Supervised Learning Framework}, 
-      author={Cheol-Hui Lee and Hakseung Kim and Byung C. Yoon and Dong-Joo Kim},
-      year={2025},
-      eprint={2502.17481},
-      archivePrefix={arXiv},
-      primaryClass={eess.SP},
-      url={https://arxiv.org/abs/2502.17481}, 
+@article{lee2025toward,
+  title={Toward Foundational Model for Sleep Analysis Using a Multimodal Hybrid Self-Supervised Learning Framework},
+  author={Lee, Cheol-Hui and Kim, Hakseung and Yoon, Byung C and Kim, Dong-Joo},
+  journal={arXiv preprint arXiv:2502.17481},
+  year={2025}
 }
 ```
 
